@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Alice Mazes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/alice-mazes.css" />
+  </head>
+  <body>
+    <div>
+      <div>
+        <h2>Mazes</h2>
+        <div class="grid-container">
+          <button class="btn selected" data-maze-sel data-maze-id="1">
+            Maze 1
+          </button>
+          <button class="btn" data-maze-sel data-maze-id="2">Maze 2</button>
+          <button class="btn" data-maze-sel data-maze-id="3">Maze 3</button>
+          <button class="btn" data-maze-sel data-maze-id="4">Maze 4</button>
+          <button class="btn" data-maze-sel data-maze-id="5">Maze 5</button>
+          <button class="btn" data-maze-sel data-maze-id="6">Maze 6</button>
+          <button class="btn" data-maze-sel data-maze-id="7">Maze 7</button>
+          <button class="btn" data-maze-sel data-maze-id="8">Maze 8</button>
+          <button class="btn" data-maze-sel data-maze-id="9">Maze 9</button>
+          <button class="btn" data-maze-sel data-maze-id="10">Maze 10</button>
+          <button class="btn" data-maze-sel data-maze-id="11">Maze 11</button>
+          <button class="btn" data-maze-sel data-maze-id="12">Maze 12</button>
+          <button class="btn" data-maze-sel data-maze-id="13">Maze 13</button>
+          <button class="btn" data-maze-sel data-maze-id="14">Maze 14</button>
+          <button class="btn" data-maze-sel data-maze-id="15">Maze 15</button>
+          <button class="btn" data-maze-sel data-maze-id="16">Maze 16</button>
+          <button class="btn" data-maze-sel data-maze-id="17">Maze 17</button>
+          <button class="btn" data-maze-sel data-maze-id="18">Maze 18</button>
+          <button class="btn" data-maze-sel data-maze-id="19">Maze 19</button>
+          <button class="btn" data-maze-sel data-maze-id="20">Maze 20</button>
+        </div>
+      </div>
+      <div style="padding-bottom: 24px;">
+        <h2 style="color: darkmagenta">
+          Current Step Size: <span id="stepSizeIndicator">1</span>
+        </h2>
+        <svg id="step-counter" width="440" height="40" viewBox="0 0 396 36">
+          <defs>
+            <rect id="c_i" height="36" width="36" fill="#dddddd" />
+            <rect id="c_b" height="36" width="36" fill="#00ccff" />
+            <rect id="c_g" height="36" width="36" fill="#66ff66" />
+            <rect id="c_r" height="36" width="36" fill="#ff6666" />
+          </defs>
+          <g id="stepgrid"></g>
+        </svg>
+      </div>
+      <svg id="maze" width="800" height="800" viewBox="0 0 480 480">
+        <style>
+          .usable-tile {
+            cursor: pointer;
+          }
+
+          .txt-goal {
+            font: 20px sans-serif;
+          }
+        </style>
+        <defs>
+          <rect id="t_i" height="48" width="48" fill="#dddddd" />
+          <rect id="t_b" height="48" width="48" fill="#00ccff" />
+          <rect id="t_g" height="48" width="48" fill="#66ff66" />
+          <rect id="t_r" height="48" width="48" fill="#ff6666" />
+          <rect
+            class="usable-tile"
+            id="t_0"
+            height="48"
+            width="48"
+            fill="#000000"
+            fill-opacity="0"
+          />
+          <polygon
+            id="ak_e"
+            points="22,0 15,5 15,2 0,2 -1.414,1.414 -2,0 -1.414,-1.414 0,-2 15,-2 15,-5"
+            fill="#000000"
+          />
+          <polygon
+            id="ar_e"
+            points="22,0 14,6 14,4 0,4 -2.828,2.828 -4,0 -2.828,-2.828 0,-4 14,-4 14,-6"
+            fill="#008800"
+          />
+          <polygon
+            id="ay_e"
+            points="22,0 14,6 14,3 0,3 -2.121,2.121 -3,0 -2.121,-2.121 0,-3 14,-3 14,-6"
+            fill="#aa0000"
+          />
+          <polygon id="zk_e" points="-12,-2 0,-2 0,2 -12,2" fill="#000000" />
+          <polygon id="zr_e" points="-14,-4 0,-4 0,4 -14,4" fill="#008800" />
+          <polygon id="zy_e" points="-12,-3 0,-3 0,3 -12,3" fill="#aa0000" />
+          <g id="txt_goal">
+            <text class="txt-goal" x="-19" y="6">goal</text>
+            <rect x="-24" y="-24" width="48" height="48" fill-opacity="0" />
+          </g>
+        </defs>
+        <g id="mazegrid"></g>
+      </svg>
+    </div>
+    <script src="assets/js/alice-mazes-runner.js" type="module"></script>
+  </body>
+</html>
