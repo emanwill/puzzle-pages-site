@@ -296,9 +296,12 @@ function initTileContents(parent, tileX, tileY) {
 
   if (count === 0) {
     // This is actually the goal tile; append the goal text
-    const txt = document.createElementNS(XMLNS, "use");
-    txt.setAttributeNS(null, "href", "#txt_goal");
-    group.appendChild(txt);
+    const adf = document.createElementNS(XMLNS, "use");
+    adf.setAttributeNS(null, "href", "#star_goal");
+    adf.setAttributeNS(null, "transform", "scale(0.6)");
+    // const txt = document.createElementNS(XMLNS, "use");
+    // txt.setAttributeNS(null, "href", "#txt_goal");
+    group.appendChild(adf);
   }
 
   parent.appendChild(group);

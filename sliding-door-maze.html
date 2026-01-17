@@ -5,15 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Sliding Door Maze</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div style="background-color: white">
-      <svg
-        id="maze"
-        width="628"
-        height="868"
-        style="background-image: url(&quot;assets/img/maze.png&quot;)"
-      ></svg>
+    <div class="flex flex-row bg-gray-200 p-2 gap-6">
+      <!-- Navigation Header -->
+       <a href="index.html">Home</a>
+       <a href="alice-mazes.html">Alice Maze</a>
+       <a href="sliding-door-maze.html">Sliding Door Maze</a>
+    </div>
+    <div class="flex flex-row bg-white p-4 gap-4">
+      <svg id="maze" width="628" height="868">
+        <defs>
+          <path
+            id="sw_r"
+            d="M 0 -14 A 14,14 0 0 1 0,14 A 14,14 0 0 1 0,-14 z M 10 0 L -6 -7 L -6 7 L 10 0 z"
+          />
+          <path
+            id="sw_l"
+            d="M 0 -14 A 14,14 0 0 1 0,14 A 14,14 0 0 1 0,-14 z M -10 0 L 6 7 L 6 -7 L -10 0 z"
+          />
+          <path
+            id="goal"
+            d="M 0 -32 L 7.186 -9.882 L 30.434 -9.888 L 11.630 3.778 L 18.810 25.888 L 0 12.223 L -18.810 25.888 L -11.630 3.778 L -30.434 -9.888 L -7.186 -9.882 Z"
+          />
+        </defs>
+      </svg>
+      <div>
+        <div class="border-3 border-gray-400 rounded-sm p-2">
+          <div>
+            <p>
+              Use your <strong>keyboard arrow keys</strong> to navigate the
+              maze.
+            </p>
+          </div>
+          <div class="flex flex-row justify-center pt-1">
+            <img src="assets/img/arrow-keys-3.jpg" width="100" />
+          </div>
+        </div>
+      </div>
     </div>
     <script src="assets/js/sliding-door-maze.js"></script>
   </body>
