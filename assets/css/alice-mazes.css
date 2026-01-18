@@ -1,11 +1,11 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     max-width: 600px;
 }
 
-.btn {
+.alice-btn {
     background-color: #555555;
     border: none;
     color: white;
@@ -16,7 +16,7 @@
     cursor: pointer;
 }
 
-.selected {
+.alice-btn-selected {
     background-color: #dddddd;
     color: black;
     font-weight: bold;

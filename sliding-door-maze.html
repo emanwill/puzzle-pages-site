@@ -8,30 +8,37 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="flex flex-row bg-gray-200 p-2 gap-6">
+    <nav class="flex flex-row bg-gray-200 p-2 gap-6">
       <!-- Navigation Header -->
-       <a href="index.html">Home</a>
-       <a href="alice-mazes.html">Alice Maze</a>
-       <a href="sliding-door-maze.html">Sliding Door Maze</a>
-    </div>
+      <a href="index.html">Home</a>
+      <a href="alice-mazes.html">Alice Maze</a>
+      <a href="sliding-door-maze.html" class="font-bold">Sliding Door Maze</a>
+    </nav>
     <div class="flex flex-row bg-white p-4 gap-4">
-      <svg id="maze" width="628" height="868">
-        <defs>
-          <path
-            id="sw_r"
-            d="M 0 -14 A 14,14 0 0 1 0,14 A 14,14 0 0 1 0,-14 z M 10 0 L -6 -7 L -6 7 L 10 0 z"
-          />
-          <path
-            id="sw_l"
-            d="M 0 -14 A 14,14 0 0 1 0,14 A 14,14 0 0 1 0,-14 z M -10 0 L 6 7 L 6 -7 L -10 0 z"
-          />
-          <path
-            id="goal"
-            d="M 0 -32 L 7.186 -9.882 L 30.434 -9.888 L 11.630 3.778 L 18.810 25.888 L 0 12.223 L -18.810 25.888 L -11.630 3.778 L -30.434 -9.888 L -7.186 -9.882 Z"
-          />
-        </defs>
-      </svg>
-      <div>
+      <div class="p-2 bg-black rounded-sm">
+        <svg
+          id="maze"
+          width="628"
+          height="868"
+          style="background-color: white; box-sizing: content-box"
+        >
+          <defs>
+            <path
+              id="sw_r"
+              d="M 0 -14 A 14,14 0 0 1 0,14 A 14,14 0 0 1 0,-14 z M 10 0 L -6 -7 L -6 7 L 10 0 z"
+            />
+            <path
+              id="sw_l"
+              d="M 0 -14 A 14,14 0 0 1 0,14 A 14,14 0 0 1 0,-14 z M -10 0 L 6 7 L 6 -7 L -10 0 z"
+            />
+            <path
+              id="goal"
+              d="M 0 -32 L 7.186 -9.882 L 30.434 -9.888 L 11.630 3.778 L 18.810 25.888 L 0 12.223 L -18.810 25.888 L -11.630 3.778 L -30.434 -9.888 L -7.186 -9.882 Z"
+            />
+          </defs>
+        </svg>
+      </div>
+      <div class="flex flex-col gap-4">
         <div class="border-3 border-gray-400 rounded-sm p-2">
           <div>
             <p>
@@ -42,6 +49,14 @@
           <div class="flex flex-row justify-center pt-1">
             <img src="assets/img/arrow-keys-3.jpg" width="100" />
           </div>
+        </div>
+        <div class="border-3 border-gray-400 rounded-sm p-4 flex flex-col items-center gap-6">
+          <button
+            id="btn-reset"
+            class="inline-flex h-12 items-center justify-center rounded-md bg-blue-700 px-6 font-bold text-blue-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+          >
+            RESET
+          </button>
         </div>
       </div>
     </div>

@@ -9,122 +9,189 @@
     <link rel="stylesheet" href="assets/css/alice-mazes.css" />
   </head>
   <body>
-    <div class="flex flex-row bg-gray-200 p-2 gap-6">
+    <nav class="flex flex-row bg-gray-200 p-2 gap-6">
       <!-- Navigation Header -->
       <a href="index.html">Home</a>
-      <a href="alice-mazes.html">Alice Maze</a>
+      <a href="alice-mazes.html" class="font-bold">Alice Maze</a>
       <a href="sliding-door-maze.html">Sliding Door Maze</a>
-    </div>
+    </nav>
     <div class="flex flex-row p-4 gap-4">
-      <svg id="maze" width="800" height="800" viewBox="0 0 480 480">
-        <style>
-          .usable-tile {
-            cursor: pointer;
-          }
-
-          .txt-goal {
-            font: 20px sans-serif;
-          }
-        </style>
-        <defs>
-          <rect id="t_i" height="48" width="48" fill="#6D6D6D" />
-          <rect id="t_b" height="48" width="48" fill="#EAEAEA" />
-          <rect id="t_g" height="48" width="48" fill="#CCCCCC" />
-          <rect id="t_r" height="48" width="48" fill="#4D86CC" />
-          <rect
-            class="usable-tile"
-            id="t_0"
-            height="48"
-            width="48"
-            fill="#000000"
-            fill-opacity="0"
-          />
-          <polygon
-            id="ak_e"
-            points="22,0 15,5 15,2 0,2 -1.414,1.414 -2,0 -1.414,-1.414 0,-2 15,-2 15,-5"
-            fill="#000000"
-          />
-          <polygon
-            id="ar_e"
-            points="22,0 14,6 14,4 0,4 -2.828,2.828 -4,0 -2.828,-2.828 0,-4 14,-4 14,-6"
-            fill="#14A50F"
-          />
-          <polygon
-            id="ay_e"
-            points="22,0 14,6 14,3 0,3 -2.121,2.121 -3,0 -2.121,-2.121 0,-3 14,-3 14,-6"
-            fill="#BF0505"
-          />
-          <polygon id="zk_e" points="-12,-2 0,-2 0,2 -12,2" fill="#000000" />
-          <polygon id="zr_e" points="-14,-4 0,-4 0,4 -14,4" fill="#14A50F" />
-          <polygon id="zy_e" points="-12,-3 0,-3 0,3 -12,3" fill="#BF0505" />
-          <g id="txt_goal">
-            <text class="txt-goal" x="-19" y="6">goal</text>
-            <rect x="-24" y="-24" width="48" height="48" fill-opacity="0" />
-          </g>
-          <path id="star_goal" d="M 0 -32 L 7.186 -9.882 L 30.434 -9.888 L 11.630 3.778 L 18.810 25.888 L 0 12.223 L -18.810 25.888 L -11.630 3.778 L -30.434 -9.888 L -7.186 -9.882 Z" fill="#DDBB00" />
-        </defs>
-        <g id="mazegrid"></g>
-      </svg>
-      <div>
-        <div>
-          <h2>Mazes</h2>
-          <div class="grid-container">
-            <button class="btn selected" data-maze-sel data-maze-id="1">
-              Maze 1
-            </button>
-            <button class="btn" data-maze-sel data-maze-id="2">Maze 2</button>
-            <button class="btn" data-maze-sel data-maze-id="3">Maze 3</button>
-            <button class="btn" data-maze-sel data-maze-id="4">Maze 4</button>
-            <button class="btn" data-maze-sel data-maze-id="5">Maze 5</button>
-            <button class="btn" data-maze-sel data-maze-id="6">Maze 6</button>
-            <button class="btn" data-maze-sel data-maze-id="7">Maze 7</button>
-            <button class="btn" data-maze-sel data-maze-id="8">Maze 8</button>
-            <button class="btn" data-maze-sel data-maze-id="9">Maze 9</button>
-            <button class="btn" data-maze-sel data-maze-id="10">Maze 10</button>
-            <button class="btn" data-maze-sel data-maze-id="11">Maze 11</button>
-            <button class="btn" data-maze-sel data-maze-id="12">Maze 12</button>
-            <button class="btn" data-maze-sel data-maze-id="13">Maze 13</button>
-            <button class="btn" data-maze-sel data-maze-id="14">Maze 14</button>
-            <button class="btn" data-maze-sel data-maze-id="15">Maze 15</button>
-            <button class="btn" data-maze-sel data-maze-id="16">Maze 16</button>
-            <button class="btn" data-maze-sel data-maze-id="17">Maze 17</button>
-            <button class="btn" data-maze-sel data-maze-id="18">Maze 18</button>
-            <button class="btn" data-maze-sel data-maze-id="19">Maze 19</button>
-            <button class="btn" data-maze-sel data-maze-id="20">Maze 20</button>
+      <div class="bg-neutral-600 border rounded-sm">
+        <svg id="maze" width="800" height="800" viewBox="0 0 480 480">
+          <style>
+            .usable-tile {
+              cursor: pointer;
+            }
+          </style>
+          <defs>
+            <rect id="t_i" height="48" width="48" fill="#525252" />
+            <rect id="t_b" height="48" width="48" fill="#EAEAEA" />
+            <rect id="t_g" height="48" width="48" fill="#CCCCCC" />
+            <rect id="t_r" height="48" width="48" fill="#4D86DC" />
+            <rect
+              class="usable-tile"
+              id="t_0"
+              height="48"
+              width="48"
+              fill="#000000"
+              fill-opacity="0"
+            />
+            <polygon
+              id="ak_e"
+              points="22,0 15,5 15,2 0,2 -1.414,1.414 -2,0 -1.414,-1.414 0,-2 15,-2 15,-5"
+              fill="#000000"
+            />
+            <polygon
+              id="ar_e"
+              points="22,0 14,6 14,4 0,4 -2.828,2.828 -4,0 -2.828,-2.828 0,-4 14,-4 14,-6"
+              fill="#14A50F"
+            />
+            <polygon
+              id="ay_e"
+              points="22,0 14,6 14,3 0,3 -2.121,2.121 -3,0 -2.121,-2.121 0,-3 14,-3 14,-6"
+              fill="#BF0505"
+            />
+            <polygon id="zk_e" points="-12,-2 0,-2 0,2 -12,2" fill="#000000" />
+            <polygon id="zr_e" points="-14,-4 0,-4 0,4 -14,4" fill="#14A50F" />
+            <polygon id="zy_e" points="-12,-3 0,-3 0,3 -12,3" fill="#BF0505" />
+            <g id="txt_goal">
+              <text class="txt-goal" x="-19" y="6">goal</text>
+              <rect x="-24" y="-24" width="48" height="48" fill-opacity="0" />
+            </g>
+            <path
+              id="star_goal"
+              d="M 0 -32 L 7.186 -9.882 L 30.434 -9.888 L 11.630 3.778 L 18.810 25.888 L 0 12.223 L -18.810 25.888 L -11.630 3.778 L -30.434 -9.888 L -7.186 -9.882 Z"
+              fill="#EECC00"
+              stroke="#000000"
+              stroke-width="1.3"
+            />
+          </defs>
+          <g id="mazegrid"></g>
+        </svg>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col items-center gap-2 border-3 border-neutral-400 rounded-sm p-2">
+          <p>
+            <strong>Click on grid squares</strong> to navigate around the maze.
+          </p>
+          <div>
+            <svg height="80" width="80" viewBox="0 0 56 56">
+              <rect id="t_g" height="48" width="48" fill="#CCCCCC" />
+              <g transform="translate(24,24)">
+                <polygon
+                  id="ak_e"
+                  points="22,0 15,5 15,2 0,2 -1.414,1.414 -2,0 -1.414,-1.414 0,-2 15,-2 15,-5"
+                  fill="#000000"
+                />
+                <polygon
+                  id="ak_e"
+                  points="22,0 15,5 15,2 0,2 -1.414,1.414 -2,0 -1.414,-1.414 0,-2 15,-2 15,-5"
+                  fill="#000000"
+                  transform="rotate(-135)"
+                />
+              </g>
+              <image
+                href="assets/img/pointer2.png"
+                height="25"
+                width="25"
+                transform="translate(20,33) rotate(-15)"
+              />
+            </svg>
           </div>
         </div>
-        <div style="padding-bottom: 24px">
+        <div
+          class="border-3 border-neutral-400 rounded-sm p-2 flex flex-col gap-6"
+        >
           <div>
-            <div>
-              <!-- Explanation of (+) arrow -->
+            <h2 class="text-2xl text-orange-600 font-serif">
+              <span>Current Step Size: </span
+              ><span id="stepSizeIndicator" class="font-bold text-3xl">1</span>
+            </h2>
+            <svg id="step-counter" width="550" height="55" viewBox="0 0 396 36">
+              <defs>
+                <rect id="c_i" height="36" width="36" fill="#525252" />
+                <rect id="c_b" height="36" width="36" fill="#EAEAEA" />
+                <rect id="c_g" height="36" width="36" fill="#CCCCCC" />
+                <rect id="c_r" height="36" width="36" fill="#4D86DC" />
+                <path
+                  id="p_j"
+                  d="M -36 0 C -27 -16 -13 -16 -4 -7 L -3 -9 L 0 0 L -9 -3 L -7 -4 C -16 -13 -28 -12 -36 0 Z"
+                  fill="black"
+                />
+              </defs>
+              <g id="stepgrid"></g>
+            </svg>
+          </div>
+          <!-- Explanation of (+) arrow -->
+          <div class="flex flex-row gap-2">
+            <svg height="80" width="80" viewBox="0 0 48 48">
+              <rect id="t_g" height="48" width="48" fill="#CCCCCC" />
+              <g transform="translate(24,24)">
+                <polygon
+                  points="22,0 14,6 14,4 0,4 -2.828,2.828 -4,0 -2.828,-2.828 0,-4 14,-4 14,-6"
+                  fill="#14A50F"
+                />
+                <polygon points="-14,-4 0,-4 0,4 -14,4" fill="#14A50F" />
+              </g>
+            </svg>
+            <div class="flex flex-col justify-around">
               <div>
-                <!-- arrow graphic -->
+                <p>
+                  Green Arrows <strong>increase</strong> your step size by 1.
+                </p>
               </div>
               <div>
-                <div>
-                  <!-- old step length -->
-                </div>
-                <div>
-                  <!-- new step length -->
-                </div>
+                <p>
+                  Careful that your stride doesn't grow too large for the map!
+                </p>
               </div>
-            </div>
-            <div>
-              <!-- Explanation of (-) arrow... -->
             </div>
           </div>
-          <h2 style="color: darkmagenta">
-            Current Step Size: <span id="stepSizeIndicator">1</span>
-          </h2>
-          <svg id="step-counter" width="440" height="40" viewBox="0 0 396 36">
-            <defs>
-              <rect id="c_i" height="36" width="36" fill="#6D6D6D" />
-              <rect id="c_b" height="36" width="36" fill="#EAEAEA" />
-              <rect id="c_g" height="36" width="36" fill="#CCCCCC" />
-              <rect id="c_r" height="36" width="36" fill="#4D86CC" />
-            </defs>
-            <g id="stepgrid"></g>
-          </svg>
+          <!-- Explanation of (-) arrow... -->
+          <div class="flex flex-row gap-2">
+            <svg height="80" width="80" viewBox="0 0 48 48">
+              <rect id="t_g" height="48" width="48" fill="#CCCCCC" />
+              <g transform="translate(24,24)">
+                <polygon
+                  points="22,0 14,6 14,3 0,3 -2.121,2.121 -3,0 -2.121,-2.121 0,-3 14,-3 14,-6"
+                  fill="#BF0505"
+                />
+                <polygon points="-12,-3 0,-3 0,3 -12,3" fill="#BF0505" />
+              </g>
+            </svg>
+            <div class="flex flex-col justify-around">
+              <div>
+                <p>Red Arrows <strong>decrease</strong> your step size by 1.</p>
+              </div>
+              <div>
+                <p>If your step size becomes zero, you'll be stuck!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-3 border-neutral-400 rounded-sm p-2 grid grid-cols-5 grid-rows-4 gap-1">
+          <button class="alice-btn alice-btn-selected" data-maze-sel data-maze-id="1">
+            Maze 1
+          </button>
+          <button class="alice-btn" data-maze-sel data-maze-id="2">Maze 2</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="3">Maze 3</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="4">Maze 4</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="5">Maze 5</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="6">Maze 6</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="7">Maze 7</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="8">Maze 8</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="9">Maze 9</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="10">Maze 10</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="11">Maze 11</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="12">Maze 12</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="13">Maze 13</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="14">Maze 14</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="15">Maze 15</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="16">Maze 16</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="17">Maze 17</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="18">Maze 18</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="19">Maze 19</button>
+          <button class="alice-btn" data-maze-sel data-maze-id="20">Maze 20</button>
         </div>
       </div>
     </div>

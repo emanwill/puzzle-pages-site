@@ -253,7 +253,22 @@ let currentX = 6;
 let currentY = 17;
 setExplorerPosition(currentX, currentY);
 
+function reset() {
+  currentX = 6;
+  currentY = 17;
+  setExplorerPosition(currentX, currentY);
+  setDoorPosition("r", -1);
+  setDoorPosition("g", -1);
+  setDoorPosition("m", -1);
+  setDoorPosition("c", -1);
+  setTimeout(() => {
+    document.getElementById("btn-reset")?.blur();
+  }, 500)
+}
+
 document.addEventListener("keydown", onKeyDown);
+
+document.getElementById("btn-reset")?.addEventListener("click", reset);
 
 /**
  *

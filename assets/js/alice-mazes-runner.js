@@ -85,9 +85,9 @@ function initMaze(data) {
   for (let btn of mazeSelectorButtons) {
     const btnMazeId = btn.getAttribute("data-maze-id");
     if (btnMazeId === mazeData[0].toString()) {
-      btn.setAttribute("class", "btn selected");
+      btn.setAttribute("class", "alice-btn alice-btn-selected");
     } else {
-      btn.setAttribute("class", "btn");
+      btn.setAttribute("class", "alice-btn");
     }
   }
 
@@ -298,9 +298,7 @@ function initTileContents(parent, tileX, tileY) {
     // This is actually the goal tile; append the goal text
     const adf = document.createElementNS(XMLNS, "use");
     adf.setAttributeNS(null, "href", "#star_goal");
-    adf.setAttributeNS(null, "transform", "scale(0.6)");
-    // const txt = document.createElementNS(XMLNS, "use");
-    // txt.setAttributeNS(null, "href", "#txt_goal");
+    adf.setAttributeNS(null, "transform", "scale(0.6)\ntranslate(0,2.5)");
     group.appendChild(adf);
   }
 
@@ -342,20 +340,28 @@ function initStepGrid() {
     tile.setAttributeNS(null, "y", "0");
     stepGrid.appendChild(tile);
   }
+
+  for (let i = 1; i < 11; i++) {
+    const jump = document.createElementNS(XMLNS, "use");
+    jump.setAttributeNS(null, "id", `p_j${i}`);
+    jump.setAttributeNS(null, "href", "#p_j");
+    jump.setAttributeNS(null, "transform", `translate(${i * 36 + 18},${18})`);
+    stepGrid.appendChild(jump);
+  }
 }
 
 function drawStepSize() {
   for (let i = 1; i < stepSize + 1; i++) {
     const stepTile = document.getElementById(`c_c${i}`);
-    if (stepTile) {
-      stepTile.setAttributeNS(null, "href", i % 2 === 0 ? "#c_b" : "#c_g");
-    }
+    stepTile?.setAttributeNS(null, "href", i % 2 === 0 ? "#c_g" : "#c_b");
+    const stepJump = document.getElementById(`p_j${i}`);
+    stepJump?.setAttributeNS(null, "visibility", "");
   }
 
   for (let i = stepSize + 1; i < 11; i++) {
     const stepTile = document.getElementById(`c_c${i}`);
-    if (stepTile) {
-      stepTile.setAttributeNS(null, "href", "#c_i");
-    }
+    stepTile?.setAttributeNS(null, "href", "#c_i");
+    const stepJump = document.getElementById(`p_j${i}`);
+    stepJump?.setAttributeNS(null, "visibility", "hidden");
   }
 }
